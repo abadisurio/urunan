@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "887751415351",
+    "project_id": "cheapedin-demo",
+    "storage_bucket": "cheapedin-demo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887751415351:android:e474141cb5bf3b024e11b2",
+        "android_client_info": {
+          "package_name": "com.eternalenterprise.urunan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaufbCgFMSKDgG7U-u7l23g3l8PPL_1bo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

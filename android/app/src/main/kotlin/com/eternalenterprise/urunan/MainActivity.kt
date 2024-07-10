@@ -1,4 +1,4 @@
-package com.eternalenterprise.urunan.urunan
+package com.eternalenterprise.urunan
 
 import io.flutter.embedding.android.FlutterActivity
 
