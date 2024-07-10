@@ -1,5 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:urunan/app/view/app.dart';
+
+part 'widgets/active_subscription.dart';
+part 'widgets/pilot_activities.dart';
 
 @RoutePage()
 class HomePage extends StatelessWidget {
@@ -7,6 +11,68 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const _HomeView();
+  }
+}
+
+class _HomeView extends StatefulWidget {
+  const _HomeView();
+
+  @override
+  State<_HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<_HomeView> {
+  final _scrollController = ScrollController();
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Urunan'),
+        forceMaterialTransparency: true,
+      ),
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        controller: _scrollController,
+        slivers: [
+          SliverMainAxisGroup(
+            slivers: [
+              SliverPersistentHeader(
+                delegate: _ActiveSubscriptionTitle(),
+                pinned: true,
+              ),
+              const SliverToBoxAdapter(child: _ActiveSubscription()),
+            ],
+          ),
+          SliverMainAxisGroup(
+            slivers: [
+              SliverPersistentHeader(
+                delegate: _PilotActivitesTitle(),
+                pinned: true,
+              ),
+              const _PilotActivites(),
+            ],
+          ),
+          SliverMainAxisGroup(
+            slivers: [
+              SliverPersistentHeader(
+                delegate: _PilotActivitesTitle(),
+                pinned: true,
+              ),
+              SliverList.builder(
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return const ListTile(
+                    title: Text('text'),
+                  );
+                },
+              ),
+            ],
+          ),
+
+          // _PilotActivites(),
+        ],
+      ),
+    );
   }
 }

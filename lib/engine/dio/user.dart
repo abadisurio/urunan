@@ -18,8 +18,8 @@ class UserDio extends UserDAO {
   }
 
   @override
-  Future<Pilot> getDetail({required String id}) {
-    throw UnimplementedError();
+  Future<Pilot> getDetail({required String id}) async {
+    return Pilot(id: 'id', username: 'username', createdAt: DateTime.now());
   }
 
   @override

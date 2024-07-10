@@ -23,12 +23,12 @@ class UserRepository implements UserDAO {
 
   @override
   Future<Pilot> getDetail({required String id}) {
-    throw UnimplementedError();
+    return _dao.getDetail(id: id);
   }
 
   @override
   Future<Pilot> getPreview({required String id}) {
-    throw UnimplementedError();
+    return _dao.getPreview(id: id);
   }
 
   @override

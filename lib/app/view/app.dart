@@ -115,12 +115,21 @@ class _BlocListener extends StatelessWidget {
   }
 }
 
+final _typography = Typography();
+
 final _app = MaterialApp.router(
   localizationsDelegates: AppLocalizations.localizationsDelegates,
   supportedLocales: AppLocalizations.supportedLocales,
   routerConfig: _appRouter.config(),
   theme: ThemeData.dark().copyWith(
-    textTheme: GoogleFonts.oswaldTextTheme(),
+    brightness: Brightness.dark,
+    textTheme: GoogleFonts.plusJakartaSansTextTheme(
+      _typography.white.copyWith(
+        titleMedium: const TextStyle(fontWeight: FontWeight.bold),
+        titleLarge: const TextStyle(fontWeight: FontWeight.bold),
+        titleSmall: const TextStyle(fontWeight: FontWeight.bold),
+      ),
+    ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
         borderSide: BorderSide(color: Colors.orange.shade900, width: 2),
@@ -150,3 +159,13 @@ final _app = MaterialApp.router(
   // theme: lightTheme,
   // darkTheme: darkTheme,
 );
+
+extension BuildContextEntension<T> on BuildContext {
+  double get screenWidth => MediaQuery.of(this).size.width;
+
+  double get screenHeight => MediaQuery.of(this).size.height;
+
+  Size get size => MediaQuery.of(this).size;
+
+  TextTheme get textTheme => Theme.of(this).textTheme;
+}
