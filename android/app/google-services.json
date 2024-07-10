@@ -12,7 +12,12 @@
           "package_name": "com.eternalenterprise.urunan"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "887751415351-5eorveprurameg2bqgk05cqdoq3nt5qd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAaufbCgFMSKDgG7U-u7l23g3l8PPL_1bo"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887751415351-5eorveprurameg2bqgk05cqdoq3nt5qd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "887751415351-ajufr9rfqoakr0ui0jib92f1gfqak2qe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.eternalenterprise.urunan"
+              }
+            }
+          ]
         }
       }
     }

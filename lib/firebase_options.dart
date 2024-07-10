@@ -14,8 +14,23 @@ import 'package:flutter/foundation.dart'
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
 /// ```
+///
+///
+///
+/// Environment.
+enum Environment {
+  /// Development.
+  development,
+
+  /// Staging.
+  staging,
+
+  /// Production.
+  production,
+}
+
 class DefaultFirebaseOptions {
-  static FirebaseOptions get currentPlatform {
+  static FirebaseOptions currentPlatform(Environment env) {
     if (kIsWeb) {
       throw UnsupportedError(
         'DefaultFirebaseOptions have not been configured for web - '
@@ -51,7 +66,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAaufbCgFMSKDgG7U-u7l23g3l8PPL_1bo',
-    appId: '1:887751415351:android:7d18bed5d6a801a54e11b2',
+    appId: '1:887751415351:android:e474141cb5bf3b024e11b2',
     messagingSenderId: '887751415351',
     projectId: 'cheapedin-demo',
     storageBucket: 'cheapedin-demo.appspot.com',
@@ -59,10 +74,12 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAehbJO6urJN3K8qjnbOg7icNLXWlt7F3Q',
-    appId: '1:887751415351:ios:713eb956e186076b4e11b2',
+    appId: '1:887751415351:ios:76cc5db53b9961f74e11b2',
     messagingSenderId: '887751415351',
     projectId: 'cheapedin-demo',
     storageBucket: 'cheapedin-demo.appspot.com',
+    iosClientId:
+        '887751415351-ajufr9rfqoakr0ui0jib92f1gfqak2qe.apps.googleusercontent.com',
     iosBundleId: 'com.eternalenterprise.urunan',
   );
 }
