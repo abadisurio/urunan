@@ -3,13 +3,21 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:urunan/engine/dio/tmdb.dart';
 import 'package:urunan/engine/engine.dart';
+import 'package:urunan/engine/repositories/activity.dart';
 import 'package:urunan/l10n/l10n.dart';
 import 'package:urunan/router/urunan_router.dart';
 import 'package:urunan/shared/blocs/blocs.dart';
 
 final _appRouter = UrunanRouter();
-final _dio = Dio();
+
+final _userDio = Dio(
+  BaseOptions(
+    // baseUrl: '',
+    contentType: 'application/json',
+  ),
+);
 
 final _fbAuth = FirebaseAuth.instance;
 
@@ -38,7 +46,12 @@ class _RepositoryProvider extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<UserRepository>(
-          create: (context) => UserRepository(dao: UserDio(dio: _dio)),
+          create: (context) => UserRepository(dao: UserDio(dio: _userDio)),
+        ),
+        RepositoryProvider<ActivityRepository>(
+          create: (context) => ActivityRepository(
+            dao: ActivityDio(tmdbDio: TMDBDio()),
+          ),
         ),
       ],
       child: child,
@@ -117,6 +130,10 @@ class _BlocListener extends StatelessWidget {
 
 final _typography = Typography();
 
+const _urunanTextStyle = TextStyle(
+  letterSpacing: 0.3,
+);
+
 final _app = MaterialApp.router(
   localizationsDelegates: AppLocalizations.localizationsDelegates,
   supportedLocales: AppLocalizations.supportedLocales,
@@ -125,9 +142,12 @@ final _app = MaterialApp.router(
     brightness: Brightness.dark,
     textTheme: GoogleFonts.plusJakartaSansTextTheme(
       _typography.white.copyWith(
-        titleMedium: const TextStyle(fontWeight: FontWeight.bold),
-        titleLarge: const TextStyle(fontWeight: FontWeight.bold),
-        titleSmall: const TextStyle(fontWeight: FontWeight.bold),
+        titleMedium: _urunanTextStyle.copyWith(fontWeight: FontWeight.w800),
+        titleLarge: _urunanTextStyle.copyWith(fontWeight: FontWeight.w800),
+        titleSmall: _urunanTextStyle.copyWith(fontWeight: FontWeight.w800),
+        bodyMedium: _urunanTextStyle,
+        bodyLarge: _urunanTextStyle,
+        bodySmall: _urunanTextStyle,
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
@@ -168,4 +188,29 @@ extension BuildContextEntension<T> on BuildContext {
   Size get size => MediaQuery.of(this).size;
 
   TextTheme get textTheme => Theme.of(this).textTheme;
+}
+
+extension ColorBrightness on Color {
+  Color darken([double amount = .1]) {
+    assert(amount >= 0 && amount <= 1, 'Amount must be between 0 and 1');
+
+    final hsl = HSLColor.fromColor(this);
+    final hslDark = hsl.withLightness((hsl.lightness - amount).clamp(0.0, 1.0));
+
+    return hslDark.toColor();
+  }
+
+  Color lighten([double amount = .1]) {
+    assert(amount >= 0 && amount <= 1, 'Amount must be between 0 and 1');
+
+    final hsl = HSLColor.fromColor(this);
+    final hslLight =
+        hsl.withLightness((hsl.lightness + amount).clamp(0.0, 1.0));
+
+    return hslLight.toColor();
+  }
+
+  Brightness get getTextColorTheme {
+    return (computeLuminance() > 0.179) ? Brightness.light : Brightness.dark;
+  }
 }

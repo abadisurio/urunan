@@ -1,6 +1,14 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
+import 'package:flutter/material.dart' hide Image;
+
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:urunan/app/view/app.dart';
+import 'package:urunan/engine/engine.dart';
+import 'package:urunan/engine/repositories/activity.dart';
+import 'package:urunan/screens/home/home.dart';
 
 part 'widgets/active_subscription.dart';
 part 'widgets/pilot_activities.dart';
@@ -11,7 +19,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const _HomeView();
+    return BlocProvider(
+      create: (context) => HomeBloc(
+        activityRepository: context.read<ActivityRepository>(),
+      )..add(const LoadData()),
+      child: const _HomeView(),
+    );
   }
 }
 
