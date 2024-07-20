@@ -20,9 +20,7 @@ class _PilotActivites extends StatelessWidget {
             final activity = activities[index];
             return Padding(
               padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-              // padding: EdgeInsets.zero,
-              // child: _ActivityWithPoster(activity: activity),
-              child: _SimpleActivity(activity: activity),
+              child: TapDownScaller(child: _SimpleActivity(activity: activity)),
             );
           },
         );
@@ -335,14 +333,14 @@ class _SimpleActivity extends StatelessWidget {
               ),
             ),
           ),
-          Positioned.fill(
-            child: Material(
-              type: MaterialType.transparency,
-              child: InkWell(
-                onTap: () {},
-              ),
-            ),
-          ),
+          // Positioned.fill(
+          //   child: Material(
+          //     type: MaterialType.transparency,
+          //     child: InkWell(
+          //       onTap: () {},
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

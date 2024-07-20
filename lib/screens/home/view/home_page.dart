@@ -11,6 +11,7 @@ import 'package:urunan/app/view/app.dart';
 import 'package:urunan/engine/engine.dart';
 import 'package:urunan/engine/repositories/activity.dart';
 import 'package:urunan/screens/home/home.dart';
+import 'package:urunan/shared/shared.dart';
 
 part 'widgets/active_subscription.dart';
 part 'widgets/pilot_activities.dart';
