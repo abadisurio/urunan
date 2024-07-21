@@ -22,9 +22,13 @@ abstract class _$UrunanRouter extends RootStackRouter {
       );
     },
     MovieDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<MovieDetailRouteArgs>();
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const MovieDetailPage(),
+        child: MovieDetailPage(
+          activityDetail: args.activityDetail,
+          key: args.key,
+        ),
       );
     },
     MusicDetailRoute.name: (routeData) {
@@ -64,16 +68,40 @@ class HomeRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [MovieDetailPage]
-class MovieDetailRoute extends PageRouteInfo<void> {
-  const MovieDetailRoute({List<PageRouteInfo>? children})
-      : super(
+class MovieDetailRoute extends PageRouteInfo<MovieDetailRouteArgs> {
+  MovieDetailRoute({
+    required ActivityDetail activityDetail,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
           MovieDetailRoute.name,
+          args: MovieDetailRouteArgs(
+            activityDetail: activityDetail,
+            key: key,
+          ),
           initialChildren: children,
         );
 
   static const String name = 'MovieDetailRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static const PageInfo<MovieDetailRouteArgs> page =
+      PageInfo<MovieDetailRouteArgs>(name);
+}
+
+class MovieDetailRouteArgs {
+  const MovieDetailRouteArgs({
+    required this.activityDetail,
+    this.key,
+  });
+
+  final ActivityDetail activityDetail;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'MovieDetailRouteArgs{activityDetail: $activityDetail, key: $key}';
+  }
 }
 
 /// generated route for

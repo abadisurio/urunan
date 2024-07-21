@@ -39,8 +39,10 @@ class ActivityDio extends ActivityDAO {
     // return ActivityPreview(
     //     id: 'id', createdAt: DateTime.now(), creatorId: 'creatorId', ca);
     return movieDiscovery.map((movie) {
+      // log('debug movie $movie');
       final baseImageUrl = _tmdbDio.baseImageUrl;
       final mediaUrl = movie['backdrop_path'];
+      final posterUrl = movie['poster_path'] as String?;
       final title = movie['title'] as String?;
       final overview = movie['overview'] as String?;
       return ActivityPreview(
@@ -59,6 +61,7 @@ class ActivityDio extends ActivityDAO {
           artType: ArtType.movie,
           name: title,
           thumbnailUrl: '$baseImageUrl$mediaUrl',
+          posterUrl: '$posterUrl',
         ),
         mediaUrl: '$baseImageUrl$mediaUrl',
         caption: overview,

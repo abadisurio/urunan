@@ -338,8 +338,15 @@ class _SimpleActivity extends StatelessWidget {
               type: MaterialType.transparency,
               child: InkWell(
                 onTap: () {
+                  final finalActivity = ActivityDetail(
+                    id: activity.id,
+                    createdAt: activity.createdAt,
+                    creatorId: activity.creatorId,
+                    art: activity.art,
+                  );
                   if (activity.art?.artType == ArtType.movie) {
-                    context.router.push(const MovieDetailRoute());
+                    context.router
+                        .push(MovieDetailRoute(activityDetail: finalActivity));
                   } else if (activity.art?.artType == ArtType.music) {
                     context.router.push(const MusicDetailRoute());
                   }

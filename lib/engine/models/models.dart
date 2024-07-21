@@ -1,3 +1,4 @@
+export 'activity_detail.dart';
 export 'activity_preview.dart';
 export 'art.dart';
 export 'chat.dart';

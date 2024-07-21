@@ -130,21 +130,29 @@ class _BlocListener extends StatelessWidget {
 
 final _typography = Typography();
 
-const _urunanTextStyle = TextStyle(
-  letterSpacing: 0.3,
-);
+const _urunanTextStyle = TextStyle(letterSpacing: 0.3);
 
 final _app = MaterialApp.router(
   localizationsDelegates: AppLocalizations.localizationsDelegates,
   supportedLocales: AppLocalizations.supportedLocales,
   routerConfig: _appRouter.config(),
   theme: ThemeData.dark().copyWith(
+    scaffoldBackgroundColor: Colors.black,
     brightness: Brightness.dark,
     textTheme: GoogleFonts.plusJakartaSansTextTheme(
-      _typography.white.copyWith(
-        titleMedium: _urunanTextStyle.copyWith(fontWeight: FontWeight.w800),
-        titleLarge: _urunanTextStyle.copyWith(fontWeight: FontWeight.w800),
-        titleSmall: _urunanTextStyle.copyWith(fontWeight: FontWeight.w800),
+      _typography.black.copyWith(
+        titleMedium: _urunanTextStyle.copyWith(
+          fontWeight: FontWeight.w800,
+          color: Colors.grey.shade100,
+        ),
+        titleLarge: _urunanTextStyle.copyWith(
+          fontWeight: FontWeight.w800,
+          color: Colors.grey.shade100,
+        ),
+        titleSmall: _urunanTextStyle.copyWith(
+          fontWeight: FontWeight.w800,
+          color: Colors.grey.shade100,
+        ),
         bodyMedium: _urunanTextStyle,
         bodyLarge: _urunanTextStyle,
         bodySmall: _urunanTextStyle,
@@ -152,27 +160,27 @@ final _app = MaterialApp.router(
     ),
     inputDecorationTheme: InputDecorationTheme(
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.orange.shade900, width: 2),
+        borderSide: BorderSide(color: Colors.indigo.shade900, width: 2),
       ),
       focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.orange.shade900, width: 2),
+        borderSide: BorderSide(color: Colors.indigo.shade900, width: 2),
       ),
       border: OutlineInputBorder(
-        borderSide: BorderSide(color: Colors.orange.shade900, width: 2),
+        borderSide: BorderSide(color: Colors.indigo.shade900, width: 2),
       ),
       labelStyle: GoogleFonts.oswald(
         textStyle: const TextStyle(color: Colors.white),
         color: Colors.white,
       ),
-      fillColor: Colors.orange.shade900,
+      fillColor: Colors.indigo.shade900,
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.orange.shade900,
+        backgroundColor: Colors.indigo.shade900,
       ),
     ),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: Colors.orange.shade900,
+      backgroundColor: Colors.indigo.shade900,
       foregroundColor: Colors.white,
     ),
   ),
@@ -184,6 +192,8 @@ extension BuildContextEntension<T> on BuildContext {
   double get screenWidth => MediaQuery.of(this).size.width;
 
   double get screenHeight => MediaQuery.of(this).size.height;
+
+  EdgeInsets get screenPadding => MediaQuery.of(this).viewPadding;
 
   Size get size => MediaQuery.of(this).size;
 
