@@ -13,6 +13,7 @@ _$ArtImpl _$$ArtImplFromJson(Map<String, dynamic> json) => _$ArtImpl(
       name: json['name'] as String?,
       title: json['title'] as String?,
       artist: json['artist'] as String?,
+      posterUrl: json['posterUrl'] as String?,
       thumbnailUrl: json['thumbnailUrl'] as String?,
       thumbnailColorHex: json['thumbnailColorHex'] as String?,
     );
@@ -24,6 +25,7 @@ Map<String, dynamic> _$$ArtImplToJson(_$ArtImpl instance) => <String, dynamic>{
       'name': instance.name,
       'title': instance.title,
       'artist': instance.artist,
+      'posterUrl': instance.posterUrl,
       'thumbnailUrl': instance.thumbnailUrl,
       'thumbnailColorHex': instance.thumbnailColorHex,
     };

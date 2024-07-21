@@ -13,6 +13,7 @@ class Art with _$Art {
     String? name,
     String? title,
     String? artist,
+    String? posterUrl,
     String? thumbnailUrl,
     String? thumbnailColorHex,
   }) = _Art;

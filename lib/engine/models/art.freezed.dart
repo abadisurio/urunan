@@ -26,6 +26,7 @@ mixin _$Art {
   String? get name => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get artist => throw _privateConstructorUsedError;
+  String? get posterUrl => throw _privateConstructorUsedError;
   String? get thumbnailUrl => throw _privateConstructorUsedError;
   String? get thumbnailColorHex => throw _privateConstructorUsedError;
 
@@ -46,6 +47,7 @@ abstract class $ArtCopyWith<$Res> {
       String? name,
       String? title,
       String? artist,
+      String? posterUrl,
       String? thumbnailUrl,
       String? thumbnailColorHex});
 }
@@ -68,6 +70,7 @@ class _$ArtCopyWithImpl<$Res, $Val extends Art> implements $ArtCopyWith<$Res> {
     Object? name = freezed,
     Object? title = freezed,
     Object? artist = freezed,
+    Object? posterUrl = freezed,
     Object? thumbnailUrl = freezed,
     Object? thumbnailColorHex = freezed,
   }) {
@@ -96,6 +99,10 @@ class _$ArtCopyWithImpl<$Res, $Val extends Art> implements $ArtCopyWith<$Res> {
           ? _value.artist
           : artist // ignore: cast_nullable_to_non_nullable
               as String?,
+      posterUrl: freezed == posterUrl
+          ? _value.posterUrl
+          : posterUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       thumbnailUrl: freezed == thumbnailUrl
           ? _value.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
@@ -121,6 +128,7 @@ abstract class _$$ArtImplCopyWith<$Res> implements $ArtCopyWith<$Res> {
       String? name,
       String? title,
       String? artist,
+      String? posterUrl,
       String? thumbnailUrl,
       String? thumbnailColorHex});
 }
@@ -140,6 +148,7 @@ class __$$ArtImplCopyWithImpl<$Res> extends _$ArtCopyWithImpl<$Res, _$ArtImpl>
     Object? name = freezed,
     Object? title = freezed,
     Object? artist = freezed,
+    Object? posterUrl = freezed,
     Object? thumbnailUrl = freezed,
     Object? thumbnailColorHex = freezed,
   }) {
@@ -168,6 +177,10 @@ class __$$ArtImplCopyWithImpl<$Res> extends _$ArtCopyWithImpl<$Res, _$ArtImpl>
           ? _value.artist
           : artist // ignore: cast_nullable_to_non_nullable
               as String?,
+      posterUrl: freezed == posterUrl
+          ? _value.posterUrl
+          : posterUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
       thumbnailUrl: freezed == thumbnailUrl
           ? _value.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
@@ -191,6 +204,7 @@ class _$ArtImpl implements _Art {
       this.name,
       this.title,
       this.artist,
+      this.posterUrl,
       this.thumbnailUrl,
       this.thumbnailColorHex});
 
@@ -210,13 +224,15 @@ class _$ArtImpl implements _Art {
   @override
   final String? artist;
   @override
+  final String? posterUrl;
+  @override
   final String? thumbnailUrl;
   @override
   final String? thumbnailColorHex;
 
   @override
   String toString() {
-    return 'Art(id: $id, createdAt: $createdAt, artType: $artType, name: $name, title: $title, artist: $artist, thumbnailUrl: $thumbnailUrl, thumbnailColorHex: $thumbnailColorHex)';
+    return 'Art(id: $id, createdAt: $createdAt, artType: $artType, name: $name, title: $title, artist: $artist, posterUrl: $posterUrl, thumbnailUrl: $thumbnailUrl, thumbnailColorHex: $thumbnailColorHex)';
   }
 
   @override
@@ -231,6 +247,8 @@ class _$ArtImpl implements _Art {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.artist, artist) || other.artist == artist) &&
+            (identical(other.posterUrl, posterUrl) ||
+                other.posterUrl == posterUrl) &&
             (identical(other.thumbnailUrl, thumbnailUrl) ||
                 other.thumbnailUrl == thumbnailUrl) &&
             (identical(other.thumbnailColorHex, thumbnailColorHex) ||
@@ -240,7 +258,7 @@ class _$ArtImpl implements _Art {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, artType, name,
-      title, artist, thumbnailUrl, thumbnailColorHex);
+      title, artist, posterUrl, thumbnailUrl, thumbnailColorHex);
 
   @JsonKey(ignore: true)
   @override
@@ -264,6 +282,7 @@ abstract class _Art implements Art {
       final String? name,
       final String? title,
       final String? artist,
+      final String? posterUrl,
       final String? thumbnailUrl,
       final String? thumbnailColorHex}) = _$ArtImpl;
 
@@ -281,6 +300,8 @@ abstract class _Art implements Art {
   String? get title;
   @override
   String? get artist;
+  @override
+  String? get posterUrl;
   @override
   String? get thumbnailUrl;
   @override

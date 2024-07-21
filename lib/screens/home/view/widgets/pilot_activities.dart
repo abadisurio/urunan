@@ -333,14 +333,20 @@ class _SimpleActivity extends StatelessWidget {
               ),
             ),
           ),
-          // Positioned.fill(
-          //   child: Material(
-          //     type: MaterialType.transparency,
-          //     child: InkWell(
-          //       onTap: () {},
-          //     ),
-          //   ),
-          // ),
+          Positioned.fill(
+            child: Material(
+              type: MaterialType.transparency,
+              child: InkWell(
+                onTap: () {
+                  if (activity.art?.artType == ArtType.movie) {
+                    context.router.push(const MovieDetailRoute());
+                  } else if (activity.art?.artType == ArtType.music) {
+                    context.router.push(const MusicDetailRoute());
+                  }
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );

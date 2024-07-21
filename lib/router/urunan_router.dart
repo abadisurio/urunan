@@ -22,6 +22,18 @@ class UrunanRouter extends _$UrunanRouter {
           guards: [UrunanGuard()],
           page: HomeRoute.page,
         ),
+        AutoRoute(
+          guards: [UrunanGuard()],
+          page: MovieDetailRoute.page,
+        ),
+        AutoRoute(
+          guards: [UrunanGuard()],
+          page: MusicDetailRoute.page,
+        ),
+        AutoRoute(
+          guards: [UrunanGuard()],
+          page: SeriesDetailRoute.page,
+        ),
       ];
 }
 
