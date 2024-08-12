@@ -23,6 +23,11 @@ class UrunanRouter extends _$UrunanRouter {
           initial: true,
           guards: [UrunanGuard()],
           page: HomeRoute.page,
+          children: [
+            AutoRoute(
+              page: TimelineRoute.page,
+            ),
+          ],
         ),
         AutoRoute(
           guards: [UrunanGuard()],

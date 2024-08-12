@@ -1,4 +1,4 @@
-part of '../home_page.dart';
+part of '../timeline_page.dart';
 
 // class _ServiceActivites extends StatelessWidget {
 //   const _ServiceActivites();

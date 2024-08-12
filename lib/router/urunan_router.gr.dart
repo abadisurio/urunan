@@ -59,6 +59,12 @@ abstract class _$UrunanRouter extends RootStackRouter {
         child: const SignInPage(),
       );
     },
+    TimelineRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const TimelinePage(),
+      );
+    },
   };
 }
 
@@ -190,6 +196,20 @@ class SignInRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SignInRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [TimelinePage]
+class TimelineRoute extends PageRouteInfo<void> {
+  const TimelineRoute({List<PageRouteInfo>? children})
+      : super(
+          TimelineRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'TimelineRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
