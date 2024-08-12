@@ -32,7 +32,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(
       state.copyWith(activities: activities),
     );
-    add(const LoadTileColors());
+    // add(const LoadTileColors());
   }
 
   Future<void> _onLoadTileColors(

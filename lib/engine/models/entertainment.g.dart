@@ -1,15 +1,16 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'art.dart';
+part of 'entertainment.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ArtImpl _$$ArtImplFromJson(Map<String, dynamic> json) => _$ArtImpl(
+_$EntertainmentImpl _$$EntertainmentImplFromJson(Map<String, dynamic> json) =>
+    _$EntertainmentImpl(
       id: json['id'] as String,
       createdAt: DateTime.parse(json['createdAt'] as String),
-      artType: $enumDecode(_$ArtTypeEnumMap, json['artType']),
+      artType: $enumDecode(_$EntertainmentTypeEnumMap, json['artType']),
       name: json['name'] as String?,
       title: json['title'] as String?,
       artist: json['artist'] as String?,
@@ -18,10 +19,11 @@ _$ArtImpl _$$ArtImplFromJson(Map<String, dynamic> json) => _$ArtImpl(
       thumbnailColorHex: json['thumbnailColorHex'] as String?,
     );
 
-Map<String, dynamic> _$$ArtImplToJson(_$ArtImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$$EntertainmentImplToJson(_$EntertainmentImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'createdAt': instance.createdAt.toIso8601String(),
-      'artType': _$ArtTypeEnumMap[instance.artType]!,
+      'artType': _$EntertainmentTypeEnumMap[instance.artType]!,
       'name': instance.name,
       'title': instance.title,
       'artist': instance.artist,
@@ -30,7 +32,7 @@ Map<String, dynamic> _$$ArtImplToJson(_$ArtImpl instance) => <String, dynamic>{
       'thumbnailColorHex': instance.thumbnailColorHex,
     };
 
-const _$ArtTypeEnumMap = {
-  ArtType.music: 'music',
-  ArtType.movie: 'movie',
+const _$EntertainmentTypeEnumMap = {
+  EntertainmentType.music: 'music',
+  EntertainmentType.movie: 'movie',
 };

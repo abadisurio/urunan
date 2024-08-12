@@ -11,12 +11,19 @@ class ActivityPreview with _$ActivityPreview {
     required String id,
     required DateTime createdAt,
     required String creatorId,
+    required ActivityType type,
     Pilot? creator,
-    Art? art,
+    List<SubscriptionService>? service,
+    Entertainment? art,
     String? caption,
     String? mediaUrl,
   }) = _ActivityPreview;
 
   factory ActivityPreview.fromJson(Map<String, dynamic> json) =>
       _$ActivityPreviewFromJson(json);
+}
+
+enum ActivityType {
+  post,
+  subscription,
 }

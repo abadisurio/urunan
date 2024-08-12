@@ -31,34 +31,64 @@ class ActivityDio extends ActivityDAO {
 
   @override
   Future<List<ActivityPreview>> getLast20Activity() async {
-    final movieDiscovery = await _tmdbDio.getMovieDiscovery();
-    // for (final movie in movieDiscovery) {
-    // }
-    // log('debug movie ${movieDiscovery.first}');
-    // throw UnimplementedError();
-    // return ActivityPreview(
-    //     id: 'id', createdAt: DateTime.now(), creatorId: 'creatorId', ca);
-    return movieDiscovery.map((movie) {
-      // log('debug movie $movie');
-      final baseImageUrl = _tmdbDio.baseImageUrl;
-      final mediaUrl = movie['backdrop_path'];
-      final posterUrl = movie['poster_path'] as String?;
-      final title = movie['title'] as String?;
-      final overview = movie['overview'] as String?;
-      return ActivityPreview(
+    final activities = <ActivityPreview>[];
+
+    final subscriptions = [
+      SubscriptionService(
+        id: 'id',
+        createdAt: DateTime.now(),
+        provider: SubscriptionServiceProvider.netflix,
+        logoUrl:
+            '''https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg?w=540''',
+      ),
+      SubscriptionService(
+        id: 'id2',
+        createdAt: DateTime.now(),
+        provider: SubscriptionServiceProvider.canva,
+        logoUrl:
+            '''https://e7.pngegg.com/pngimages/472/750/png-clipart-canva-new-logo-tech-companies.png''',
+      ),
+    ];
+
+    for (final subscription in subscriptions) {
+      final activity = ActivityPreview(
         id: 'id',
         createdAt: DateTime.now(),
         creatorId: 'creatorId',
+        type: ActivityType.subscription,
         creator: Pilot(
           id: 'id',
           username: 'Eric',
           createdAt: DateTime.now(),
           // photoUrl: null,
         ),
-        art: Art(
+        service: [subscription],
+      );
+      activities.add(activity);
+    }
+
+    final movieDiscovery = await _tmdbDio.getMovieDiscovery();
+    for (final movie in movieDiscovery) {
+      final baseImageUrl = _tmdbDio.baseImageUrl;
+      final mediaUrl = movie['backdrop_path'];
+      final posterUrl = movie['poster_path'] as String?;
+      final title = movie['title'] as String?;
+      final overview = movie['overview'] as String?;
+      final activity = ActivityPreview(
+        id: 'id',
+        createdAt: DateTime.now(),
+        creatorId: 'creatorId',
+        type: ActivityType.post,
+        creator: Pilot(
+          id: 'id',
+          username: 'Eric',
+          createdAt: DateTime.now(),
+          // photoUrl: null,
+        ),
+        art: Entertainment(
           id: 'id',
           createdAt: DateTime.now(),
-          artType: ArtType.movie,
+          artType: EntertainmentType.movie,
           name: title,
           thumbnailUrl: '$baseImageUrl$mediaUrl',
           posterUrl: '$posterUrl',
@@ -66,6 +96,8 @@ class ActivityDio extends ActivityDAO {
         mediaUrl: '$baseImageUrl$mediaUrl',
         caption: overview,
       );
-    }).toList();
+      activities.add(activity);
+    }
+    return activities;
   }
 }

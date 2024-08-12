@@ -23,8 +23,10 @@ mixin _$ActivityPreview {
   String get id => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get creatorId => throw _privateConstructorUsedError;
+  ActivityType get type => throw _privateConstructorUsedError;
   Pilot? get creator => throw _privateConstructorUsedError;
-  Art? get art => throw _privateConstructorUsedError;
+  List<SubscriptionService>? get service => throw _privateConstructorUsedError;
+  Entertainment? get art => throw _privateConstructorUsedError;
   String? get caption => throw _privateConstructorUsedError;
   String? get mediaUrl => throw _privateConstructorUsedError;
 
@@ -44,13 +46,15 @@ abstract class $ActivityPreviewCopyWith<$Res> {
       {String id,
       DateTime createdAt,
       String creatorId,
+      ActivityType type,
       Pilot? creator,
-      Art? art,
+      List<SubscriptionService>? service,
+      Entertainment? art,
       String? caption,
       String? mediaUrl});
 
   $PilotCopyWith<$Res>? get creator;
-  $ArtCopyWith<$Res>? get art;
+  $EntertainmentCopyWith<$Res>? get art;
 }
 
 /// @nodoc
@@ -69,7 +73,9 @@ class _$ActivityPreviewCopyWithImpl<$Res, $Val extends ActivityPreview>
     Object? id = null,
     Object? createdAt = null,
     Object? creatorId = null,
+    Object? type = null,
     Object? creator = freezed,
+    Object? service = freezed,
     Object? art = freezed,
     Object? caption = freezed,
     Object? mediaUrl = freezed,
@@ -87,14 +93,22 @@ class _$ActivityPreviewCopyWithImpl<$Res, $Val extends ActivityPreview>
           ? _value.creatorId
           : creatorId // ignore: cast_nullable_to_non_nullable
               as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ActivityType,
       creator: freezed == creator
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
               as Pilot?,
+      service: freezed == service
+          ? _value.service
+          : service // ignore: cast_nullable_to_non_nullable
+              as List<SubscriptionService>?,
       art: freezed == art
           ? _value.art
           : art // ignore: cast_nullable_to_non_nullable
-              as Art?,
+              as Entertainment?,
       caption: freezed == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
@@ -120,12 +134,12 @@ class _$ActivityPreviewCopyWithImpl<$Res, $Val extends ActivityPreview>
 
   @override
   @pragma('vm:prefer-inline')
-  $ArtCopyWith<$Res>? get art {
+  $EntertainmentCopyWith<$Res>? get art {
     if (_value.art == null) {
       return null;
     }
 
-    return $ArtCopyWith<$Res>(_value.art!, (value) {
+    return $EntertainmentCopyWith<$Res>(_value.art!, (value) {
       return _then(_value.copyWith(art: value) as $Val);
     });
   }
@@ -143,15 +157,17 @@ abstract class _$$ActivityPreviewImplCopyWith<$Res>
       {String id,
       DateTime createdAt,
       String creatorId,
+      ActivityType type,
       Pilot? creator,
-      Art? art,
+      List<SubscriptionService>? service,
+      Entertainment? art,
       String? caption,
       String? mediaUrl});
 
   @override
   $PilotCopyWith<$Res>? get creator;
   @override
-  $ArtCopyWith<$Res>? get art;
+  $EntertainmentCopyWith<$Res>? get art;
 }
 
 /// @nodoc
@@ -168,7 +184,9 @@ class __$$ActivityPreviewImplCopyWithImpl<$Res>
     Object? id = null,
     Object? createdAt = null,
     Object? creatorId = null,
+    Object? type = null,
     Object? creator = freezed,
+    Object? service = freezed,
     Object? art = freezed,
     Object? caption = freezed,
     Object? mediaUrl = freezed,
@@ -186,14 +204,22 @@ class __$$ActivityPreviewImplCopyWithImpl<$Res>
           ? _value.creatorId
           : creatorId // ignore: cast_nullable_to_non_nullable
               as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ActivityType,
       creator: freezed == creator
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
               as Pilot?,
+      service: freezed == service
+          ? _value._service
+          : service // ignore: cast_nullable_to_non_nullable
+              as List<SubscriptionService>?,
       art: freezed == art
           ? _value.art
           : art // ignore: cast_nullable_to_non_nullable
-              as Art?,
+              as Entertainment?,
       caption: freezed == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
@@ -214,10 +240,13 @@ class _$ActivityPreviewImpl implements _ActivityPreview {
       {required this.id,
       required this.createdAt,
       required this.creatorId,
+      required this.type,
       this.creator,
+      final List<SubscriptionService>? service,
       this.art,
       this.caption,
-      this.mediaUrl});
+      this.mediaUrl})
+      : _service = service;
 
   factory _$ActivityPreviewImpl.fromJson(Map<String, dynamic> json) =>
       _$$ActivityPreviewImplFromJson(json);
@@ -229,9 +258,21 @@ class _$ActivityPreviewImpl implements _ActivityPreview {
   @override
   final String creatorId;
   @override
-  final Pilot? creator;
+  final ActivityType type;
   @override
-  final Art? art;
+  final Pilot? creator;
+  final List<SubscriptionService>? _service;
+  @override
+  List<SubscriptionService>? get service {
+    final value = _service;
+    if (value == null) return null;
+    if (_service is EqualUnmodifiableListView) return _service;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final Entertainment? art;
   @override
   final String? caption;
   @override
@@ -239,7 +280,7 @@ class _$ActivityPreviewImpl implements _ActivityPreview {
 
   @override
   String toString() {
-    return 'ActivityPreview(id: $id, createdAt: $createdAt, creatorId: $creatorId, creator: $creator, art: $art, caption: $caption, mediaUrl: $mediaUrl)';
+    return 'ActivityPreview(id: $id, createdAt: $createdAt, creatorId: $creatorId, type: $type, creator: $creator, service: $service, art: $art, caption: $caption, mediaUrl: $mediaUrl)';
   }
 
   @override
@@ -252,7 +293,9 @@ class _$ActivityPreviewImpl implements _ActivityPreview {
                 other.createdAt == createdAt) &&
             (identical(other.creatorId, creatorId) ||
                 other.creatorId == creatorId) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.creator, creator) || other.creator == creator) &&
+            const DeepCollectionEquality().equals(other._service, _service) &&
             (identical(other.art, art) || other.art == art) &&
             (identical(other.caption, caption) || other.caption == caption) &&
             (identical(other.mediaUrl, mediaUrl) ||
@@ -262,7 +305,16 @@ class _$ActivityPreviewImpl implements _ActivityPreview {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, createdAt, creatorId, creator, art, caption, mediaUrl);
+      runtimeType,
+      id,
+      createdAt,
+      creatorId,
+      type,
+      creator,
+      const DeepCollectionEquality().hash(_service),
+      art,
+      caption,
+      mediaUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -284,8 +336,10 @@ abstract class _ActivityPreview implements ActivityPreview {
       {required final String id,
       required final DateTime createdAt,
       required final String creatorId,
+      required final ActivityType type,
       final Pilot? creator,
-      final Art? art,
+      final List<SubscriptionService>? service,
+      final Entertainment? art,
       final String? caption,
       final String? mediaUrl}) = _$ActivityPreviewImpl;
 
@@ -299,9 +353,13 @@ abstract class _ActivityPreview implements ActivityPreview {
   @override
   String get creatorId;
   @override
+  ActivityType get type;
+  @override
   Pilot? get creator;
   @override
-  Art? get art;
+  List<SubscriptionService>? get service;
+  @override
+  Entertainment? get art;
   @override
   String? get caption;
   @override

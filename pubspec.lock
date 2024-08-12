@@ -177,46 +177,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  camera:
-    dependency: "direct main"
-    description:
-      name: camera
-      sha256: "2170a943dcb67be2af2c6bcda8775e74b41d4c02d6a4eb10bdc832ee185c4eea"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.11.0+1"
-  camera_android_camerax:
-    dependency: transitive
-    description:
-      name: camera_android_camerax
-      sha256: "594b40a5ea0e144fdfe49e4036abe4ec9bd578b2ce3aabdb0668a02db376a1e8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.7"
-  camera_avfoundation:
-    dependency: transitive
-    description:
-      name: camera_avfoundation
-      sha256: dfe32a72db81e92a15672cb6e8ecc81e34e0a9d5bf03017f0545e7041b2b8150
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.9.16+2"
-  camera_platform_interface:
-    dependency: transitive
-    description:
-      name: camera_platform_interface
-      sha256: b3ede1f171532e0d83111fe0980b46d17f1aa9788a07a2fbed07366bbdbb9061
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.8.0"
-  camera_web:
-    dependency: transitive
-    description:
-      name: camera_web
-      sha256: "9e9aba2fbab77ce2472924196ff8ac4dd8f9126c4f9a3096171cd1d870d6b26c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.3"
   characters:
     dependency: transitive
     description:
@@ -273,14 +233,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.0"
-  cross_file:
-    dependency: transitive
-    description:
-      name: cross_file
-      sha256: "55d7b444feb71301ef6b8838dbc1ae02e63dd48c8773f3810ff53bb1e2945b32"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.4+1"
   crypto:
     dependency: transitive
     description:
@@ -289,6 +241,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+  cupertino_interactive_keyboard:
+    dependency: "direct main"
+    description:
+      name: cupertino_interactive_keyboard
+      sha256: a78743017eab57d629f9929103663fc3ae02dc4f62f8481ebc455817fd0d7b6f
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   dart_style:
     dependency: transitive
     description:
@@ -427,14 +387,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_plugin_android_lifecycle:
-    dependency: transitive
-    description:
-      name: flutter_plugin_android_lifecycle
-      sha256: c6b0b4c05c458e1c01ad9bcc14041dd7b1f6783d487be4386f793f47a8a4d03e
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.20"
   flutter_secure_storage:
     dependency: "direct main"
     description:

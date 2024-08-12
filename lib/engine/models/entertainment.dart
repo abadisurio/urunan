@@ -1,27 +1,28 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'art.freezed.dart';
-part 'art.g.dart';
+part 'entertainment.freezed.dart';
+part 'entertainment.g.dart';
 
 @freezed
-class Art with _$Art {
+class Entertainment with _$Entertainment {
   @JsonSerializable(explicitToJson: true)
-  const factory Art({
+  const factory Entertainment({
     required String id,
     required DateTime createdAt,
-    required ArtType artType,
+    required EntertainmentType artType,
     String? name,
     String? title,
     String? artist,
     String? posterUrl,
     String? thumbnailUrl,
     String? thumbnailColorHex,
-  }) = _Art;
+  }) = _Entertainment;
 
-  factory Art.fromJson(Map<String, dynamic> json) => _$ArtFromJson(json);
+  factory Entertainment.fromJson(Map<String, dynamic> json) =>
+      _$EntertainmentFromJson(json);
 }
 
-enum ArtType {
+enum EntertainmentType {
   music,
   movie,
 }

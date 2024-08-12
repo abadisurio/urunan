@@ -36,6 +36,10 @@ class UrunanRouter extends _$UrunanRouter {
           guards: [UrunanGuard()],
           page: SeriesDetailRoute.page,
         ),
+        AutoRoute(
+          guards: [UrunanGuard()],
+          page: ServiceDetailRoute.page,
+        ),
       ];
 }
 

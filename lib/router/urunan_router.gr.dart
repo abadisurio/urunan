@@ -43,6 +43,16 @@ abstract class _$UrunanRouter extends RootStackRouter {
         child: const SeriesDetailPage(),
       );
     },
+    ServiceDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<ServiceDetailRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ServiceDetailPage(
+          subscriptionService: args.subscriptionService,
+          key: args.key,
+        ),
+      );
+    },
     SignInRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -130,6 +140,44 @@ class SeriesDetailRoute extends PageRouteInfo<void> {
   static const String name = 'SeriesDetailRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ServiceDetailPage]
+class ServiceDetailRoute extends PageRouteInfo<ServiceDetailRouteArgs> {
+  ServiceDetailRoute({
+    required SubscriptionService subscriptionService,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ServiceDetailRoute.name,
+          args: ServiceDetailRouteArgs(
+            subscriptionService: subscriptionService,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ServiceDetailRoute';
+
+  static const PageInfo<ServiceDetailRouteArgs> page =
+      PageInfo<ServiceDetailRouteArgs>(name);
+}
+
+class ServiceDetailRouteArgs {
+  const ServiceDetailRouteArgs({
+    required this.subscriptionService,
+    this.key,
+  });
+
+  final SubscriptionService subscriptionService;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ServiceDetailRouteArgs{subscriptionService: $subscriptionService, key: $key}';
+  }
 }
 
 /// generated route for

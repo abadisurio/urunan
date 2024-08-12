@@ -12,7 +12,7 @@ class ActivityDetail with _$ActivityDetail {
     required DateTime createdAt,
     required String creatorId,
     Pilot? creator,
-    Art? art,
+    Entertainment? entertainment,
     String? caption,
     String? mediaUrl,
   }) = _ActivityDetail;

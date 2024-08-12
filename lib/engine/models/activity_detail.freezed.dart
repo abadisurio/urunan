@@ -24,7 +24,7 @@ mixin _$ActivityDetail {
   DateTime get createdAt => throw _privateConstructorUsedError;
   String get creatorId => throw _privateConstructorUsedError;
   Pilot? get creator => throw _privateConstructorUsedError;
-  Art? get art => throw _privateConstructorUsedError;
+  Entertainment? get entertainment => throw _privateConstructorUsedError;
   String? get caption => throw _privateConstructorUsedError;
   String? get mediaUrl => throw _privateConstructorUsedError;
 
@@ -45,12 +45,12 @@ abstract class $ActivityDetailCopyWith<$Res> {
       DateTime createdAt,
       String creatorId,
       Pilot? creator,
-      Art? art,
+      Entertainment? entertainment,
       String? caption,
       String? mediaUrl});
 
   $PilotCopyWith<$Res>? get creator;
-  $ArtCopyWith<$Res>? get art;
+  $EntertainmentCopyWith<$Res>? get entertainment;
 }
 
 /// @nodoc
@@ -70,7 +70,7 @@ class _$ActivityDetailCopyWithImpl<$Res, $Val extends ActivityDetail>
     Object? createdAt = null,
     Object? creatorId = null,
     Object? creator = freezed,
-    Object? art = freezed,
+    Object? entertainment = freezed,
     Object? caption = freezed,
     Object? mediaUrl = freezed,
   }) {
@@ -91,10 +91,10 @@ class _$ActivityDetailCopyWithImpl<$Res, $Val extends ActivityDetail>
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
               as Pilot?,
-      art: freezed == art
-          ? _value.art
-          : art // ignore: cast_nullable_to_non_nullable
-              as Art?,
+      entertainment: freezed == entertainment
+          ? _value.entertainment
+          : entertainment // ignore: cast_nullable_to_non_nullable
+              as Entertainment?,
       caption: freezed == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
@@ -120,13 +120,13 @@ class _$ActivityDetailCopyWithImpl<$Res, $Val extends ActivityDetail>
 
   @override
   @pragma('vm:prefer-inline')
-  $ArtCopyWith<$Res>? get art {
-    if (_value.art == null) {
+  $EntertainmentCopyWith<$Res>? get entertainment {
+    if (_value.entertainment == null) {
       return null;
     }
 
-    return $ArtCopyWith<$Res>(_value.art!, (value) {
-      return _then(_value.copyWith(art: value) as $Val);
+    return $EntertainmentCopyWith<$Res>(_value.entertainment!, (value) {
+      return _then(_value.copyWith(entertainment: value) as $Val);
     });
   }
 }
@@ -144,14 +144,14 @@ abstract class _$$ActivityDetailImplCopyWith<$Res>
       DateTime createdAt,
       String creatorId,
       Pilot? creator,
-      Art? art,
+      Entertainment? entertainment,
       String? caption,
       String? mediaUrl});
 
   @override
   $PilotCopyWith<$Res>? get creator;
   @override
-  $ArtCopyWith<$Res>? get art;
+  $EntertainmentCopyWith<$Res>? get entertainment;
 }
 
 /// @nodoc
@@ -169,7 +169,7 @@ class __$$ActivityDetailImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? creatorId = null,
     Object? creator = freezed,
-    Object? art = freezed,
+    Object? entertainment = freezed,
     Object? caption = freezed,
     Object? mediaUrl = freezed,
   }) {
@@ -190,10 +190,10 @@ class __$$ActivityDetailImplCopyWithImpl<$Res>
           ? _value.creator
           : creator // ignore: cast_nullable_to_non_nullable
               as Pilot?,
-      art: freezed == art
-          ? _value.art
-          : art // ignore: cast_nullable_to_non_nullable
-              as Art?,
+      entertainment: freezed == entertainment
+          ? _value.entertainment
+          : entertainment // ignore: cast_nullable_to_non_nullable
+              as Entertainment?,
       caption: freezed == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
@@ -215,7 +215,7 @@ class _$ActivityDetailImpl implements _ActivityDetail {
       required this.createdAt,
       required this.creatorId,
       this.creator,
-      this.art,
+      this.entertainment,
       this.caption,
       this.mediaUrl});
 
@@ -231,7 +231,7 @@ class _$ActivityDetailImpl implements _ActivityDetail {
   @override
   final Pilot? creator;
   @override
-  final Art? art;
+  final Entertainment? entertainment;
   @override
   final String? caption;
   @override
@@ -239,7 +239,7 @@ class _$ActivityDetailImpl implements _ActivityDetail {
 
   @override
   String toString() {
-    return 'ActivityDetail(id: $id, createdAt: $createdAt, creatorId: $creatorId, creator: $creator, art: $art, caption: $caption, mediaUrl: $mediaUrl)';
+    return 'ActivityDetail(id: $id, createdAt: $createdAt, creatorId: $creatorId, creator: $creator, entertainment: $entertainment, caption: $caption, mediaUrl: $mediaUrl)';
   }
 
   @override
@@ -253,7 +253,8 @@ class _$ActivityDetailImpl implements _ActivityDetail {
             (identical(other.creatorId, creatorId) ||
                 other.creatorId == creatorId) &&
             (identical(other.creator, creator) || other.creator == creator) &&
-            (identical(other.art, art) || other.art == art) &&
+            (identical(other.entertainment, entertainment) ||
+                other.entertainment == entertainment) &&
             (identical(other.caption, caption) || other.caption == caption) &&
             (identical(other.mediaUrl, mediaUrl) ||
                 other.mediaUrl == mediaUrl));
@@ -261,8 +262,8 @@ class _$ActivityDetailImpl implements _ActivityDetail {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, createdAt, creatorId, creator, art, caption, mediaUrl);
+  int get hashCode => Object.hash(runtimeType, id, createdAt, creatorId,
+      creator, entertainment, caption, mediaUrl);
 
   @JsonKey(ignore: true)
   @override
@@ -285,7 +286,7 @@ abstract class _ActivityDetail implements ActivityDetail {
       required final DateTime createdAt,
       required final String creatorId,
       final Pilot? creator,
-      final Art? art,
+      final Entertainment? entertainment,
       final String? caption,
       final String? mediaUrl}) = _$ActivityDetailImpl;
 
@@ -301,7 +302,7 @@ abstract class _ActivityDetail implements ActivityDetail {
   @override
   Pilot? get creator;
   @override
-  Art? get art;
+  Entertainment? get entertainment;
   @override
   String? get caption;
   @override

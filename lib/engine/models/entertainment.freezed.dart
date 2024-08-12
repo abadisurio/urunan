@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'art.dart';
+part of 'entertainment.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,15 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-Art _$ArtFromJson(Map<String, dynamic> json) {
-  return _Art.fromJson(json);
+Entertainment _$EntertainmentFromJson(Map<String, dynamic> json) {
+  return _Entertainment.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Art {
+mixin _$Entertainment {
   String get id => throw _privateConstructorUsedError;
   DateTime get createdAt => throw _privateConstructorUsedError;
-  ArtType get artType => throw _privateConstructorUsedError;
+  EntertainmentType get artType => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get artist => throw _privateConstructorUsedError;
@@ -32,18 +32,20 @@ mixin _$Art {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ArtCopyWith<Art> get copyWith => throw _privateConstructorUsedError;
+  $EntertainmentCopyWith<Entertainment> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ArtCopyWith<$Res> {
-  factory $ArtCopyWith(Art value, $Res Function(Art) then) =
-      _$ArtCopyWithImpl<$Res, Art>;
+abstract class $EntertainmentCopyWith<$Res> {
+  factory $EntertainmentCopyWith(
+          Entertainment value, $Res Function(Entertainment) then) =
+      _$EntertainmentCopyWithImpl<$Res, Entertainment>;
   @useResult
   $Res call(
       {String id,
       DateTime createdAt,
-      ArtType artType,
+      EntertainmentType artType,
       String? name,
       String? title,
       String? artist,
@@ -53,8 +55,9 @@ abstract class $ArtCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ArtCopyWithImpl<$Res, $Val extends Art> implements $ArtCopyWith<$Res> {
-  _$ArtCopyWithImpl(this._value, this._then);
+class _$EntertainmentCopyWithImpl<$Res, $Val extends Entertainment>
+    implements $EntertainmentCopyWith<$Res> {
+  _$EntertainmentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -86,7 +89,7 @@ class _$ArtCopyWithImpl<$Res, $Val extends Art> implements $ArtCopyWith<$Res> {
       artType: null == artType
           ? _value.artType
           : artType // ignore: cast_nullable_to_non_nullable
-              as ArtType,
+              as EntertainmentType,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -116,15 +119,17 @@ class _$ArtCopyWithImpl<$Res, $Val extends Art> implements $ArtCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$ArtImplCopyWith<$Res> implements $ArtCopyWith<$Res> {
-  factory _$$ArtImplCopyWith(_$ArtImpl value, $Res Function(_$ArtImpl) then) =
-      __$$ArtImplCopyWithImpl<$Res>;
+abstract class _$$EntertainmentImplCopyWith<$Res>
+    implements $EntertainmentCopyWith<$Res> {
+  factory _$$EntertainmentImplCopyWith(
+          _$EntertainmentImpl value, $Res Function(_$EntertainmentImpl) then) =
+      __$$EntertainmentImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
       DateTime createdAt,
-      ArtType artType,
+      EntertainmentType artType,
       String? name,
       String? title,
       String? artist,
@@ -134,9 +139,11 @@ abstract class _$$ArtImplCopyWith<$Res> implements $ArtCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ArtImplCopyWithImpl<$Res> extends _$ArtCopyWithImpl<$Res, _$ArtImpl>
-    implements _$$ArtImplCopyWith<$Res> {
-  __$$ArtImplCopyWithImpl(_$ArtImpl _value, $Res Function(_$ArtImpl) _then)
+class __$$EntertainmentImplCopyWithImpl<$Res>
+    extends _$EntertainmentCopyWithImpl<$Res, _$EntertainmentImpl>
+    implements _$$EntertainmentImplCopyWith<$Res> {
+  __$$EntertainmentImplCopyWithImpl(
+      _$EntertainmentImpl _value, $Res Function(_$EntertainmentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -152,7 +159,7 @@ class __$$ArtImplCopyWithImpl<$Res> extends _$ArtCopyWithImpl<$Res, _$ArtImpl>
     Object? thumbnailUrl = freezed,
     Object? thumbnailColorHex = freezed,
   }) {
-    return _then(_$ArtImpl(
+    return _then(_$EntertainmentImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -164,7 +171,7 @@ class __$$ArtImplCopyWithImpl<$Res> extends _$ArtCopyWithImpl<$Res, _$ArtImpl>
       artType: null == artType
           ? _value.artType
           : artType // ignore: cast_nullable_to_non_nullable
-              as ArtType,
+              as EntertainmentType,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -196,8 +203,8 @@ class __$$ArtImplCopyWithImpl<$Res> extends _$ArtCopyWithImpl<$Res, _$ArtImpl>
 /// @nodoc
 
 @JsonSerializable(explicitToJson: true)
-class _$ArtImpl implements _Art {
-  const _$ArtImpl(
+class _$EntertainmentImpl implements _Entertainment {
+  const _$EntertainmentImpl(
       {required this.id,
       required this.createdAt,
       required this.artType,
@@ -208,15 +215,15 @@ class _$ArtImpl implements _Art {
       this.thumbnailUrl,
       this.thumbnailColorHex});
 
-  factory _$ArtImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ArtImplFromJson(json);
+  factory _$EntertainmentImpl.fromJson(Map<String, dynamic> json) =>
+      _$$EntertainmentImplFromJson(json);
 
   @override
   final String id;
   @override
   final DateTime createdAt;
   @override
-  final ArtType artType;
+  final EntertainmentType artType;
   @override
   final String? name;
   @override
@@ -232,14 +239,14 @@ class _$ArtImpl implements _Art {
 
   @override
   String toString() {
-    return 'Art(id: $id, createdAt: $createdAt, artType: $artType, name: $name, title: $title, artist: $artist, posterUrl: $posterUrl, thumbnailUrl: $thumbnailUrl, thumbnailColorHex: $thumbnailColorHex)';
+    return 'Entertainment(id: $id, createdAt: $createdAt, artType: $artType, name: $name, title: $title, artist: $artist, posterUrl: $posterUrl, thumbnailUrl: $thumbnailUrl, thumbnailColorHex: $thumbnailColorHex)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ArtImpl &&
+            other is _$EntertainmentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -263,37 +270,38 @@ class _$ArtImpl implements _Art {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ArtImplCopyWith<_$ArtImpl> get copyWith =>
-      __$$ArtImplCopyWithImpl<_$ArtImpl>(this, _$identity);
+  _$$EntertainmentImplCopyWith<_$EntertainmentImpl> get copyWith =>
+      __$$EntertainmentImplCopyWithImpl<_$EntertainmentImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ArtImplToJson(
+    return _$$EntertainmentImplToJson(
       this,
     );
   }
 }
 
-abstract class _Art implements Art {
-  const factory _Art(
+abstract class _Entertainment implements Entertainment {
+  const factory _Entertainment(
       {required final String id,
       required final DateTime createdAt,
-      required final ArtType artType,
+      required final EntertainmentType artType,
       final String? name,
       final String? title,
       final String? artist,
       final String? posterUrl,
       final String? thumbnailUrl,
-      final String? thumbnailColorHex}) = _$ArtImpl;
+      final String? thumbnailColorHex}) = _$EntertainmentImpl;
 
-  factory _Art.fromJson(Map<String, dynamic> json) = _$ArtImpl.fromJson;
+  factory _Entertainment.fromJson(Map<String, dynamic> json) =
+      _$EntertainmentImpl.fromJson;
 
   @override
   String get id;
   @override
   DateTime get createdAt;
   @override
-  ArtType get artType;
+  EntertainmentType get artType;
   @override
   String? get name;
   @override
@@ -308,6 +316,6 @@ abstract class _Art implements Art {
   String? get thumbnailColorHex;
   @override
   @JsonKey(ignore: true)
-  _$$ArtImplCopyWith<_$ArtImpl> get copyWith =>
+  _$$EntertainmentImplCopyWith<_$EntertainmentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

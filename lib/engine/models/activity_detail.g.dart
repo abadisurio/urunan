@@ -14,9 +14,10 @@ _$ActivityDetailImpl _$$ActivityDetailImplFromJson(Map<String, dynamic> json) =>
       creator: json['creator'] == null
           ? null
           : Pilot.fromJson(json['creator'] as Map<String, dynamic>),
-      art: json['art'] == null
+      entertainment: json['entertainment'] == null
           ? null
-          : Art.fromJson(json['art'] as Map<String, dynamic>),
+          : Entertainment.fromJson(
+              json['entertainment'] as Map<String, dynamic>),
       caption: json['caption'] as String?,
       mediaUrl: json['mediaUrl'] as String?,
     );
@@ -28,7 +29,7 @@ Map<String, dynamic> _$$ActivityDetailImplToJson(
       'createdAt': instance.createdAt.toIso8601String(),
       'creatorId': instance.creatorId,
       'creator': instance.creator?.toJson(),
-      'art': instance.art?.toJson(),
+      'entertainment': instance.entertainment?.toJson(),
       'caption': instance.caption,
       'mediaUrl': instance.mediaUrl,
     };

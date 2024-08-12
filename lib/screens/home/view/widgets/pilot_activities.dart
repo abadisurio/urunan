@@ -338,17 +338,32 @@ class _SimpleActivity extends StatelessWidget {
               type: MaterialType.transparency,
               child: InkWell(
                 onTap: () {
-                  final finalActivity = ActivityDetail(
-                    id: activity.id,
-                    createdAt: activity.createdAt,
-                    creatorId: activity.creatorId,
-                    art: activity.art,
-                  );
-                  if (activity.art?.artType == ArtType.movie) {
-                    context.router
-                        .push(MovieDetailRoute(activityDetail: finalActivity));
-                  } else if (activity.art?.artType == ArtType.music) {
-                    context.router.push(const MusicDetailRoute());
+                  // log('debug activity type ${activity.type}');
+                  switch (activity.type) {
+                    case ActivityType.post:
+                      final finalActivity = ActivityDetail(
+                        id: activity.id,
+                        createdAt: activity.createdAt,
+                        creatorId: activity.creatorId,
+                        entertainment: activity.art,
+                      );
+                      if (activity.art?.artType == EntertainmentType.movie) {
+                        context.router.push(
+                          MovieDetailRoute(activityDetail: finalActivity),
+                        );
+                      } else if (activity.art?.artType ==
+                          EntertainmentType.music) {
+                        context.router.push(const MusicDetailRoute());
+                      }
+                    case ActivityType.subscription:
+                      if (activity.service != null &&
+                          activity.service!.isNotEmpty) {
+                        context.router.push(
+                          ServiceDetailRoute(
+                            subscriptionService: activity.service!.first,
+                          ),
+                        );
+                      }
                   }
                 },
               ),

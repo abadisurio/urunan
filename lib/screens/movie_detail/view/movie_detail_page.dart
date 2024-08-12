@@ -89,7 +89,7 @@ class _MovieDetailViewState extends State<_MovieDetailView> {
                 // context.router.push(DisposableRoute(album: state.album));
               },
               child: Text(
-                'Watch ${state.activity.art?.name} now',
+                'Watch ${state.activity.entertainment?.name} now',
                 style: const TextStyle(color: Colors.white),
               ),
             );
@@ -147,7 +147,7 @@ class _Header extends StatelessWidget {
         // centerTitle: true,
         title: BlocSelector<ActivityDetailBloc, ActivityDetailState, String?>(
           selector: (state) {
-            return state.activity.art?.name;
+            return state.activity.entertainment?.name;
           },
           builder: (context, artName) {
             return Text(
