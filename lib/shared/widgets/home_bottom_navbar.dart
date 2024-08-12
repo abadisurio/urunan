@@ -20,6 +20,12 @@ class _HomeBottomNavbarState extends State<HomeBottomNavbar> {
     super.initState();
   }
 
+  @override
+  void dispose() {
+    _tabsRouter.removeListener(_tabsRouterListener);
+    super.dispose();
+  }
+
   void _tabsRouterListener() {
     _tabsRouter.activeIndex;
     setState(() {
@@ -35,6 +41,7 @@ class _HomeBottomNavbarState extends State<HomeBottomNavbar> {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
           decoration: BoxDecoration(
+            boxShadow: const [BoxShadow(blurRadius: 50)],
             borderRadius: BorderRadius.circular(99),
             color: Colors.grey.shade900.darken(0.07),
           ),
@@ -68,16 +75,24 @@ class _HomeBottomNavbarState extends State<HomeBottomNavbar> {
                       child: AnimatedSize(
                         alignment: Alignment.centerLeft,
                         duration: Durations.long1,
-                        curve: Curves.easeOutCirc,
+                        curve: Curves.easeInOutBack,
+                        // curve: Curves.easeInOutQuint,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(
-                              isSelected ? route.activeIcon : route.icon,
-                              color: isSelected ? null : Colors.grey.shade500,
+                            Flexible(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Icon(
+                                  isSelected ? route.activeIcon : route.icon,
+                                  color:
+                                      isSelected ? null : Colors.grey.shade500,
+                                  size: 18,
+                                ),
+                              ),
                             ),
                             if (isSelected) ...[
-                              const SizedBox(width: 8),
+                              const SizedBox(width: 12),
                               Flexible(
                                 child: FittedBox(
                                   fit: BoxFit.scaleDown,
@@ -114,6 +129,12 @@ final _navbarRoutes = [
     route: const TimelineRoute(),
     icon: Icons.lock,
     activeIcon: Icons.lock_outline,
+  ),
+  _NavbarRoutes(
+    name: 'Buzz',
+    route: const TimelineRoute(),
+    icon: Icons.bubble_chart,
+    activeIcon: Icons.bubble_chart_outlined,
   ),
   _NavbarRoutes(
     name: 'Account',

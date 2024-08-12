@@ -15,6 +15,24 @@ abstract class _$UrunanRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AccessRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AccessPage(),
+      );
+    },
+    AccountRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AccountPage(),
+      );
+    },
+    BuzzRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const BuzzPage(),
+      );
+    },
     HomeRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -66,6 +84,48 @@ abstract class _$UrunanRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AccessPage]
+class AccessRoute extends PageRouteInfo<void> {
+  const AccessRoute({List<PageRouteInfo>? children})
+      : super(
+          AccessRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AccessRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AccountPage]
+class AccountRoute extends PageRouteInfo<void> {
+  const AccountRoute({List<PageRouteInfo>? children})
+      : super(
+          AccountRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AccountRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [BuzzPage]
+class BuzzRoute extends PageRouteInfo<void> {
+  const BuzzRoute({List<PageRouteInfo>? children})
+      : super(
+          BuzzRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'BuzzRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

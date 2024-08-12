@@ -32,41 +32,48 @@ class _TimelineView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scrollController = ScrollController();
-    return CustomScrollView(
-      // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
-      physics: const BouncingScrollPhysics(),
-      controller: scrollController,
-      slivers: [
-        SliverMainAxisGroup(
-          slivers: [
-            SliverPersistentHeader(
-              delegate: _ActiveSubscriptionTitle(),
-              pinned: true,
-            ),
-            const SliverToBoxAdapter(child: _ActiveSubscription()),
-          ],
-        ),
-        SliverMainAxisGroup(
-          slivers: [
-            SliverPersistentHeader(
-              delegate: _PilotActivitesTitle(),
-              pinned: true,
-            ),
-            const _PilotActivites(),
-          ],
-        ),
-        // SliverMainAxisGroup(
-        //   slivers: [
-        //     SliverPersistentHeader(
-        //       delegate: _ServiceActivitesTitle(),
-        //       pinned: true,
-        //     ),
-        //     const _ServiceActivites(),
-        //   ],
-        // ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Feeds'),
+        elevation: 0,
+        forceMaterialTransparency: true,
+      ),
+      body: CustomScrollView(
+        // keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        physics: const BouncingScrollPhysics(),
+        controller: scrollController,
+        slivers: [
+          SliverMainAxisGroup(
+            slivers: [
+              SliverPersistentHeader(
+                delegate: _ActiveSubscriptionTitle(),
+                pinned: true,
+              ),
+              const SliverToBoxAdapter(child: _ActiveSubscription()),
+            ],
+          ),
+          SliverMainAxisGroup(
+            slivers: [
+              SliverPersistentHeader(
+                delegate: _PilotActivitesTitle(),
+                pinned: true,
+              ),
+              const _PilotActivites(),
+            ],
+          ),
+          // SliverMainAxisGroup(
+          //   slivers: [
+          //     SliverPersistentHeader(
+          //       delegate: _ServiceActivitesTitle(),
+          //       pinned: true,
+          //     ),
+          //     const _ServiceActivites(),
+          //   ],
+          // ),
 
-        // _PilotActivites(),
-      ],
+          // _PilotActivites(),
+        ],
+      ),
     );
   }
 }

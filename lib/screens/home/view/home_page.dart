@@ -38,18 +38,19 @@ class _HomeViewState extends State<_HomeView> {
       // animatePageTransition: false,
       routes: const [
         TimelineRoute(),
-        TimelineRoute(),
-        TimelineRoute(),
+        AccessRoute(),
+        BuzzRoute(),
+        AccessRoute(),
       ],
       transitionBuilder: (context, child, animation) {
         return FadeTransition(opacity: animation, child: child);
       },
       builder: (context, child) {
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text('Home'),
-          ),
-          body: Stack(
+        return Material(
+          // appBar: AppBar(
+          //   title: const Text('Home'),
+          // ),
+          child: Stack(
             children: [
               child,
               const Align(

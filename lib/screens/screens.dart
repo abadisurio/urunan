@@ -1,3 +1,6 @@
+export 'access/access.dart';
+export 'account/account.dart';
+export 'buzz/buzz.dart';
 export 'home/home.dart';
 export 'movie_detail/movie_detail.dart';
 export 'music_detail/music_detail.dart';

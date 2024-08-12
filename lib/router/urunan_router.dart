@@ -27,6 +27,15 @@ class UrunanRouter extends _$UrunanRouter {
             AutoRoute(
               page: TimelineRoute.page,
             ),
+            AutoRoute(
+              page: AccessRoute.page,
+            ),
+            AutoRoute(
+              page: BuzzRoute.page,
+            ),
+            AutoRoute(
+              page: AccountRoute.page,
+            ),
           ],
         ),
         AutoRoute(
