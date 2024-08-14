@@ -68,5 +68,7 @@
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>your usage description here</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Authentication is required to show account access</string>
 </dict>
 </plist>

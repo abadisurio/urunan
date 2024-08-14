@@ -40,6 +40,10 @@ class UrunanRouter extends _$UrunanRouter {
         ),
         AutoRoute(
           guards: [UrunanGuard()],
+          page: AccessDetailRoute.page,
+        ),
+        AutoRoute(
+          guards: [UrunanGuard()],
           page: MovieDetailRoute.page,
         ),
         AutoRoute(

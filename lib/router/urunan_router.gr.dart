@@ -15,6 +15,17 @@ abstract class _$UrunanRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    AccessDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<AccessDetailRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: AccessDetailPage(
+          accessId: args.accessId,
+          access: args.access,
+          key: args.key,
+        ),
+      );
+    },
     AccessRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -84,6 +95,49 @@ abstract class _$UrunanRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [AccessDetailPage]
+class AccessDetailRoute extends PageRouteInfo<AccessDetailRouteArgs> {
+  AccessDetailRoute({
+    required String accessId,
+    required ServiceAccess access,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          AccessDetailRoute.name,
+          args: AccessDetailRouteArgs(
+            accessId: accessId,
+            access: access,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'AccessDetailRoute';
+
+  static const PageInfo<AccessDetailRouteArgs> page =
+      PageInfo<AccessDetailRouteArgs>(name);
+}
+
+class AccessDetailRouteArgs {
+  const AccessDetailRouteArgs({
+    required this.accessId,
+    required this.access,
+    this.key,
+  });
+
+  final String accessId;
+
+  final ServiceAccess access;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'AccessDetailRouteArgs{accessId: $accessId, access: $access, key: $key}';
+  }
 }
 
 /// generated route for

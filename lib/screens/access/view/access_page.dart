@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:urunan/app/view/app.dart';
 import 'package:urunan/engine/engine.dart';
+import 'package:urunan/router/urunan_router.dart';
 import 'package:urunan/screens/access/access.dart';
 import 'package:urunan/shared/shared.dart';
 
@@ -89,7 +90,14 @@ class _AccessItem extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        context.router.push(
+          AccessDetailRoute(
+            access: accessItem,
+            accessId: accessItem.id,
+          ),
+        );
+      },
       child: Row(
         children: [
           Expanded(

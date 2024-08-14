@@ -1,4 +1,5 @@
 export 'access/access.dart';
+export 'access_detail/access_detail.dart';
 export 'account/account.dart';
 export 'buzz/buzz.dart';
 export 'home/home.dart';
