@@ -22,6 +22,24 @@ class _BuzzView extends StatelessWidget {
         elevation: 0,
         forceMaterialTransparency: true,
       ),
+      body: const _BuzzList(),
+    );
+  }
+}
+
+class _BuzzList extends StatelessWidget {
+  const _BuzzList();
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: 15,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text('Item $index'),
+          onTap: () {},
+        );
+      },
     );
   }
 }

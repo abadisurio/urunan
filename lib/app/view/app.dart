@@ -48,6 +48,11 @@ class _RepositoryProvider extends StatelessWidget {
         RepositoryProvider<UserRepository>(
           create: (context) => UserRepository(dao: UserDio(dio: _userDio)),
         ),
+        RepositoryProvider<ServiceAccessRepository>(
+          create: (context) => const ServiceAccessRepository(
+            dio: ServiceAccessDio(),
+          ),
+        ),
         RepositoryProvider<ActivityRepository>(
           create: (context) => ActivityRepository(
             dao: ActivityDio(tmdbDio: TMDBDio()),

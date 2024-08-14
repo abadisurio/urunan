@@ -17,7 +17,7 @@ _$ActivityPreviewImpl _$$ActivityPreviewImplFromJson(
           ? null
           : Pilot.fromJson(json['creator'] as Map<String, dynamic>),
       service: (json['service'] as List<dynamic>?)
-          ?.map((e) => SubscriptionService.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => ServiceSubscription.fromJson(e as Map<String, dynamic>))
           .toList(),
       art: json['art'] == null
           ? null

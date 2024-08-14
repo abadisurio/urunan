@@ -34,17 +34,17 @@ class ActivityDio extends ActivityDAO {
     final activities = <ActivityPreview>[];
 
     final subscriptions = [
-      SubscriptionService(
+      ServiceSubscription(
         id: 'id',
         createdAt: DateTime.now(),
-        provider: SubscriptionServiceProvider.netflix,
+        provider: ServiceSubscriptionProvider.netflix,
         logoUrl:
             '''https://images.ctfassets.net/y2ske730sjqp/1aONibCke6niZhgPxuiilC/2c401b05a07288746ddf3bd3943fbc76/BrandAssets_Logos_01-Wordmark.jpg?w=540''',
       ),
-      SubscriptionService(
+      ServiceSubscription(
         id: 'id2',
         createdAt: DateTime.now(),
-        provider: SubscriptionServiceProvider.canva,
+        provider: ServiceSubscriptionProvider.canva,
         logoUrl:
             '''https://e7.pngegg.com/pngimages/472/750/png-clipart-canva-new-logo-tech-companies.png''',
       ),

@@ -11,7 +11,7 @@ class ServiceDetailPage extends StatelessWidget {
     super.key,
   });
 
-  final SubscriptionService subscriptionService;
+  final ServiceSubscription subscriptionService;
 
   @override
   Widget build(BuildContext context) {

@@ -212,7 +212,7 @@ class SeriesDetailRoute extends PageRouteInfo<void> {
 /// [ServiceDetailPage]
 class ServiceDetailRoute extends PageRouteInfo<ServiceDetailRouteArgs> {
   ServiceDetailRoute({
-    required SubscriptionService subscriptionService,
+    required ServiceSubscription subscriptionService,
     Key? key,
     List<PageRouteInfo>? children,
   }) : super(
@@ -236,7 +236,7 @@ class ServiceDetailRouteArgs {
     this.key,
   });
 
-  final SubscriptionService subscriptionService;
+  final ServiceSubscription subscriptionService;
 
   final Key? key;
 

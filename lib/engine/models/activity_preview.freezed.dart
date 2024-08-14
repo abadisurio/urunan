@@ -25,7 +25,7 @@ mixin _$ActivityPreview {
   String get creatorId => throw _privateConstructorUsedError;
   ActivityType get type => throw _privateConstructorUsedError;
   Pilot? get creator => throw _privateConstructorUsedError;
-  List<SubscriptionService>? get service => throw _privateConstructorUsedError;
+  List<ServiceSubscription>? get service => throw _privateConstructorUsedError;
   Entertainment? get art => throw _privateConstructorUsedError;
   String? get caption => throw _privateConstructorUsedError;
   String? get mediaUrl => throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ abstract class $ActivityPreviewCopyWith<$Res> {
       String creatorId,
       ActivityType type,
       Pilot? creator,
-      List<SubscriptionService>? service,
+      List<ServiceSubscription>? service,
       Entertainment? art,
       String? caption,
       String? mediaUrl});
@@ -104,7 +104,7 @@ class _$ActivityPreviewCopyWithImpl<$Res, $Val extends ActivityPreview>
       service: freezed == service
           ? _value.service
           : service // ignore: cast_nullable_to_non_nullable
-              as List<SubscriptionService>?,
+              as List<ServiceSubscription>?,
       art: freezed == art
           ? _value.art
           : art // ignore: cast_nullable_to_non_nullable
@@ -159,7 +159,7 @@ abstract class _$$ActivityPreviewImplCopyWith<$Res>
       String creatorId,
       ActivityType type,
       Pilot? creator,
-      List<SubscriptionService>? service,
+      List<ServiceSubscription>? service,
       Entertainment? art,
       String? caption,
       String? mediaUrl});
@@ -215,7 +215,7 @@ class __$$ActivityPreviewImplCopyWithImpl<$Res>
       service: freezed == service
           ? _value._service
           : service // ignore: cast_nullable_to_non_nullable
-              as List<SubscriptionService>?,
+              as List<ServiceSubscription>?,
       art: freezed == art
           ? _value.art
           : art // ignore: cast_nullable_to_non_nullable
@@ -242,7 +242,7 @@ class _$ActivityPreviewImpl implements _ActivityPreview {
       required this.creatorId,
       required this.type,
       this.creator,
-      final List<SubscriptionService>? service,
+      final List<ServiceSubscription>? service,
       this.art,
       this.caption,
       this.mediaUrl})
@@ -261,9 +261,9 @@ class _$ActivityPreviewImpl implements _ActivityPreview {
   final ActivityType type;
   @override
   final Pilot? creator;
-  final List<SubscriptionService>? _service;
+  final List<ServiceSubscription>? _service;
   @override
-  List<SubscriptionService>? get service {
+  List<ServiceSubscription>? get service {
     final value = _service;
     if (value == null) return null;
     if (_service is EqualUnmodifiableListView) return _service;
@@ -338,7 +338,7 @@ abstract class _ActivityPreview implements ActivityPreview {
       required final String creatorId,
       required final ActivityType type,
       final Pilot? creator,
-      final List<SubscriptionService>? service,
+      final List<ServiceSubscription>? service,
       final Entertainment? art,
       final String? caption,
       final String? mediaUrl}) = _$ActivityPreviewImpl;
@@ -357,7 +357,7 @@ abstract class _ActivityPreview implements ActivityPreview {
   @override
   Pilot? get creator;
   @override
-  List<SubscriptionService>? get service;
+  List<ServiceSubscription>? get service;
   @override
   Entertainment? get art;
   @override

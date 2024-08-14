@@ -40,13 +40,14 @@ class _HomeViewState extends State<_HomeView> {
         TimelineRoute(),
         AccessRoute(),
         BuzzRoute(),
-        AccessRoute(),
+        AccountRoute(),
       ],
       transitionBuilder: (context, child, animation) {
         return FadeTransition(opacity: animation, child: child);
       },
       builder: (context, child) {
         return Material(
+          type: MaterialType.transparency,
           // appBar: AppBar(
           //   title: const Text('Home'),
           // ),

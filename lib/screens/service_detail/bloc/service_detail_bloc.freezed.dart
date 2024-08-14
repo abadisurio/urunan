@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ServiceDetailState {
-  SubscriptionService get service => throw _privateConstructorUsedError;
+  ServiceSubscription get service => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ServiceDetailStateCopyWith<ServiceDetailState> get copyWith =>
@@ -29,9 +29,9 @@ abstract class $ServiceDetailStateCopyWith<$Res> {
           ServiceDetailState value, $Res Function(ServiceDetailState) then) =
       _$ServiceDetailStateCopyWithImpl<$Res, ServiceDetailState>;
   @useResult
-  $Res call({SubscriptionService service});
+  $Res call({ServiceSubscription service});
 
-  $SubscriptionServiceCopyWith<$Res> get service;
+  $ServiceSubscriptionCopyWith<$Res> get service;
 }
 
 /// @nodoc
@@ -53,14 +53,14 @@ class _$ServiceDetailStateCopyWithImpl<$Res, $Val extends ServiceDetailState>
       service: null == service
           ? _value.service
           : service // ignore: cast_nullable_to_non_nullable
-              as SubscriptionService,
+              as ServiceSubscription,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SubscriptionServiceCopyWith<$Res> get service {
-    return $SubscriptionServiceCopyWith<$Res>(_value.service, (value) {
+  $ServiceSubscriptionCopyWith<$Res> get service {
+    return $ServiceSubscriptionCopyWith<$Res>(_value.service, (value) {
       return _then(_value.copyWith(service: value) as $Val);
     });
   }
@@ -74,10 +74,10 @@ abstract class _$$ServiceDetailStateImplCopyWith<$Res>
       __$$ServiceDetailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({SubscriptionService service});
+  $Res call({ServiceSubscription service});
 
   @override
-  $SubscriptionServiceCopyWith<$Res> get service;
+  $ServiceSubscriptionCopyWith<$Res> get service;
 }
 
 /// @nodoc
@@ -97,7 +97,7 @@ class __$$ServiceDetailStateImplCopyWithImpl<$Res>
       service: null == service
           ? _value.service
           : service // ignore: cast_nullable_to_non_nullable
-              as SubscriptionService,
+              as ServiceSubscription,
     ));
   }
 }
@@ -108,7 +108,7 @@ class _$ServiceDetailStateImpl implements _ServiceDetailState {
   const _$ServiceDetailStateImpl({required this.service});
 
   @override
-  final SubscriptionService service;
+  final ServiceSubscription service;
 
   @override
   bool operator ==(Object other) {
@@ -131,10 +131,10 @@ class _$ServiceDetailStateImpl implements _ServiceDetailState {
 
 abstract class _ServiceDetailState implements ServiceDetailState {
   const factory _ServiceDetailState(
-      {required final SubscriptionService service}) = _$ServiceDetailStateImpl;
+      {required final ServiceSubscription service}) = _$ServiceDetailStateImpl;
 
   @override
-  SubscriptionService get service;
+  ServiceSubscription get service;
   @override
   @JsonKey(ignore: true)
   _$$ServiceDetailStateImplCopyWith<_$ServiceDetailStateImpl> get copyWith =>

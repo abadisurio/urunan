@@ -13,7 +13,7 @@ class ActivityPreview with _$ActivityPreview {
     required String creatorId,
     required ActivityType type,
     Pilot? creator,
-    List<SubscriptionService>? service,
+    List<ServiceSubscription>? service,
     Entertainment? art,
     String? caption,
     String? mediaUrl,

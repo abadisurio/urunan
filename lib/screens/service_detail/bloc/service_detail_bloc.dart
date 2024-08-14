@@ -12,14 +12,14 @@ part 'service_detail_bloc.freezed.dart';
 
 class ServiceDetailBloc extends Bloc<ServiceDetailEvent, ServiceDetailState> {
   ServiceDetailBloc({
-    required SubscriptionService subscriptionService,
+    required ServiceSubscription subscriptionService,
   })  : _subscriptionService = subscriptionService,
         super(ServiceDetailState(service: subscriptionService)) {
     on<LoadServiceData>(_onLoadServiceData);
   }
 
   // ignore: unused_field
-  final SubscriptionService _subscriptionService;
+  final ServiceSubscription _subscriptionService;
 
   Future<void> _onLoadServiceData(
     LoadServiceData event,

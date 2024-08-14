@@ -66,7 +66,7 @@ class _HomeBottomNavbarState extends State<HomeBottomNavbar> {
                             ? Colors.grey.shade900
                             : Colors.transparent,
                         elevation: 0,
-                        minimumSize: const Size(40, 40),
+                        minimumSize: const Size(10, 10),
                         maximumSize: const Size(150, 80),
                       ),
                       onPressed: () {
@@ -75,7 +75,8 @@ class _HomeBottomNavbarState extends State<HomeBottomNavbar> {
                       child: AnimatedSize(
                         alignment: Alignment.centerLeft,
                         duration: Durations.long1,
-                        curve: Curves.easeInOutBack,
+                        curve:
+                            isSelected ? Curves.easeInOutBack : Curves.easeOut,
                         // curve: Curves.easeInOutQuint,
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
