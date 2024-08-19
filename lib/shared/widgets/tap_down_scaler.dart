@@ -40,7 +40,8 @@ class _TapDownScallerState extends State<TapDownScaller> {
         });
       },
       child: AnimatedScale(
-        duration: Durations.short1,
+        duration: Durations.short4,
+        curve: Curves.easeInOut,
         scale: _isTapDown ? 0.97 : 1,
         child: widget.child,
       ),

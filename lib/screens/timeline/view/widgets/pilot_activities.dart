@@ -356,14 +356,14 @@ class _SimpleActivity extends StatelessWidget {
                         context.router.push(const MusicDetailRoute());
                       }
                     case ActivityType.subscription:
-                      if (activity.service != null &&
-                          activity.service!.isNotEmpty) {
-                        context.router.push(
-                          ServiceDetailRoute(
-                            subscriptionService: activity.service!.first,
-                          ),
-                        );
-                      }
+                    // if (activity.service != null &&
+                    //     activity.service!.isNotEmpty) {
+                    //   context.router.push(
+                    //     ServiceDetailRoute(
+                    //       subscriptionService: activity.service!.first,
+                    //     ),
+                    //   );
+                    // }
                   }
                 },
               ),

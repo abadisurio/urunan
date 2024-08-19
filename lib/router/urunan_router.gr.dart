@@ -82,6 +82,12 @@ abstract class _$UrunanRouter extends RootStackRouter {
         ),
       );
     },
+    ServiceOfferRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ServiceOfferPage(),
+      );
+    },
     SignInRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -298,6 +304,20 @@ class ServiceDetailRouteArgs {
   String toString() {
     return 'ServiceDetailRouteArgs{subscriptionService: $subscriptionService, key: $key}';
   }
+}
+
+/// generated route for
+/// [ServiceOfferPage]
+class ServiceOfferRoute extends PageRouteInfo<void> {
+  const ServiceOfferRoute({List<PageRouteInfo>? children})
+      : super(
+          ServiceOfferRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ServiceOfferRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for

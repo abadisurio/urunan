@@ -74,7 +74,7 @@ class AccessDetailBloc extends Bloc<AccessDetailEvent, AccessDetailState> {
     }
     try {
       final didAuthenticate = await auth.authenticate(
-        localizedReason: 'Please authenticate to show account balance',
+        localizedReason: 'Please authenticate to show account access',
         options: const AuthenticationOptions(biometricOnly: true),
       );
       emit(

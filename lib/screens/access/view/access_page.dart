@@ -126,14 +126,17 @@ class _AccessItem extends StatelessWidget {
                 Stack(
                   alignment: Alignment.center,
                   children: [
-                    TweenAnimationBuilder<double>(
-                      tween: Tween<double>(begin: 0, end: 1),
-                      duration: Durations.extralong4,
-                      curve: Curves.easeInOutCirc,
-                      builder: (_, value, __) => CircularProgressIndicator(
-                        value: value,
-                        strokeWidth: 2,
-                        strokeCap: StrokeCap.round,
+                    SizedBox.square(
+                      dimension: 38,
+                      child: TweenAnimationBuilder<double>(
+                        tween: Tween<double>(begin: 0, end: 1),
+                        duration: Durations.extralong4,
+                        curve: Curves.easeInOutCirc,
+                        builder: (_, value, __) => CircularProgressIndicator(
+                          value: value,
+                          strokeWidth: 3,
+                          strokeCap: StrokeCap.round,
+                        ),
                       ),
                     ),
                     Text(
@@ -143,24 +146,12 @@ class _AccessItem extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 12),
-                Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    TweenAnimationBuilder<double>(
-                      tween: Tween<double>(begin: 0, end: 1),
-                      duration: Durations.extralong4,
-                      curve: Curves.easeInOutCirc,
-                      builder: (_, value, __) => CircularProgressIndicator(
-                        value: value,
-                        strokeWidth: 2,
-                        strokeCap: StrokeCap.round,
-                      ),
-                    ),
-                    Text(
-                      '48',
-                      style: context.textTheme.titleSmall,
-                    ),
-                  ],
+                CircleAvatar(
+                  backgroundColor: Colors.green.shade700,
+                  child: const Icon(
+                    Icons.check_rounded,
+                    color: Colors.white,
+                  ),
                 ),
                 const Spacer(),
                 CircleAvatar(
@@ -186,7 +177,7 @@ class _SubscribeNowButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
-        side: BorderSide(color: Colors.grey.shade900, width: 5),
+        side: BorderSide(color: Colors.grey.shade900, width: 3),
         foregroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         // backgroundColor: Colors.grey.shade900,
@@ -195,7 +186,9 @@ class _SubscribeNowButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
-      onPressed: () {},
+      onPressed: () {
+        context.router.push(const ServiceOfferRoute());
+      },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -142,6 +142,10 @@ final _app = MaterialApp.router(
   supportedLocales: AppLocalizations.supportedLocales,
   routerConfig: _appRouter.config(),
   theme: ThemeData.dark().copyWith(
+    splashColor: Colors.transparent,
+    // splashFactory: InkSplash.splashFactory,
+    highlightColor: Colors.black12,
+
     scaffoldBackgroundColor: Colors.black,
     brightness: Brightness.dark,
     textTheme: GoogleFonts.plusJakartaSansTextTheme(
